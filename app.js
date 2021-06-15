@@ -18,7 +18,7 @@ app.use("/api", libRoutes);
 app.set('views',"views");
 app.set('view engine','ejs');
 const port= process.env.PORT || 3000;
-mongoose.connect("mongodb://localhost:27017/UserDB",{ useNewUrlParser: true , useUnifiedTopology: true} ).then((result)=>{
+mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost:27017/UserDB",{ useNewUrlParser: true , useUnifiedTopology: true} ).then((result)=>{
     app.listen(port,function(){
         console.log('server'+port);
     });
