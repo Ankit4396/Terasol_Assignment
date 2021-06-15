@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <div style="background-color: aqua;">
+        <h1 style="text-align: center;">   TERASOL  </a></h1>
+</div>
+    <button><a href="/api" >HomePage</a></button>
+<% if(user.length>0){%>
+
+    <div>
+    <% for(Users of user){%>
+    <div>
+    <ul>
+    <li>
+        <h3>Name: <%= Users.name%> </h3>
+    <h3>Email: <%= Users.email %> </h3>
+    <h3>City: <%=Users.city%></h3>
+        <a href="/api/people/<%=Users._id%>"><button>Update</button></a>
+        <a href="/api/remove/<%=Users._id%>"><button>Delete</button></a>
+     <br><br>
+
+    </li>
+    </ul>
+    </div>
+
+    <% }  %>
+    </div>
+    <% }else{ %>
+    <h2> No Data found!</h2>
+    <% }%>
+    </body>
+    </html>
